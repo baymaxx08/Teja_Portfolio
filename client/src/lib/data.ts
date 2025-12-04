@@ -7,70 +7,70 @@ import {
   Mail, 
   Github, 
   Linkedin, 
-  Twitter 
+  Twitter,
+  Database,
+  Server,
+  Terminal,
+  Globe,
+  Cpu
 } from "lucide-react";
 
 export const skills = [
-  "React.js", "Node.js", "Express.js", "MongoDB", 
-  "TypeScript", "Tailwind CSS", "Next.js", "PostgreSQL",
-  "Git", "Docker", "AWS", "Figma"
+  "C/C++", "Python", "Java", "JavaScript", "SQL", "PHP",
+  "Node.js", "Express.js", "React.js", 
+  "MySQL", "MongoDB",
+  "Git", "Docker", "Postman", "Linux",
+  "REST APIs", "JWT Auth", "Data Structures & Algorithms"
 ];
 
 export const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution with real-time inventory management, secure payments, and an admin dashboard.",
-    tags: ["React", "Node.js", "MongoDB", "Stripe"],
+    title: "Satellite Data Processing (WEB-GIS)",
+    description: "A Web-GIS platform analyzing Sentinel-2 imagery for crop health using Gemini AI. Features include NDVI/SAVI modeling, Google Earth Engine integration, and AI-powered yield forecasting.",
+    tags: ["Python", "Gemini API", "Leaflet.js", "Google Earth Engine"],
     link: "#",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80"
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80"
   },
   {
-    title: "Task Management App",
-    description: "Collaborative task manager with real-time updates, team workspaces, and drag-and-drop kanban boards.",
-    tags: ["TypeScript", "React", "Firebase", "Tailwind"],
+    title: "Job-Seeking Platform",
+    description: "Production-ready full-stack job portal with separate roles for students/employers. Features secure JWT auth, optimized MySQL queries (40% faster), and RESTful APIs for resume management.",
+    tags: ["Node.js", "Express.js", "MySQL", "JWT"],
     link: "#",
-    image: "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?w=800&q=80"
-  },
-  {
-    title: "AI Content Generator",
-    description: "SaaS application leveraging OpenAI's API to generate marketing copy and blog posts for businesses.",
-    tags: ["Next.js", "OpenAI API", "Prisma", "PostgreSQL"],
-    link: "#",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
+    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80"
   }
 ];
 
+// Mapping Education to Certifications section as requested to fill it
 export const certifications = [
   {
-    name: "AWS Certified Solutions Architect",
-    issuer: "Amazon Web Services",
-    date: "2024",
-    icon: Award
-  },
-  {
-    name: "Meta Front-End Developer Professional Certificate",
-    issuer: "Coursera",
-    date: "2023",
-    icon: Code2
-  },
-  {
-    name: "Full Stack Open",
-    issuer: "University of Helsinki",
-    date: "2023",
+    name: "B.Tech in Computer Science & Engineering",
+    issuer: "IIIT Jabalpur",
+    date: "2023 – 2027",
     icon: GraduationCap
+  },
+  {
+    name: "Intermediate (MPC)",
+    issuer: "Sri Chaitanya Junior College",
+    date: "2020 – 2022",
+    icon: FileText
   }
 ];
 
 export const achievements = [
   {
-    title: "Hackathon Winner 2024",
-    description: "First place in the Global Tech Innovation Hackathon for building a sustainable energy tracking app.",
+    title: "CodeChef 2-Star",
+    description: "Max Rating: 1550. Participated in 35+ competitive programming contests.",
     icon: Award
   },
   {
-    title: "Open Source Contributor",
-    description: "Active contributor to several major React ecosystem libraries with over 50 merged PRs.",
-    icon: Github
+    title: "DSA Problem Solver",
+    description: "Solved 400+ Data Structures & Algorithms problems across LeetCode, Codeforces, and CodeChef.",
+    icon: Code2
+  },
+  {
+    title: "LeetCode Rating: 1578",
+    description: "Consistent problem solver with a strong grasp of algorithmic efficiency.",
+    icon: Terminal
   }
 ];
 
@@ -86,13 +86,16 @@ export const socialLinks = [
     icon: Linkedin
   },
   {
-    name: "Twitter",
-    url: "https://twitter.com",
-    icon: Twitter
-  },
-  {
     name: "Email",
-    url: "mailto:hello@example.com",
+    url: "mailto:saitejareddynamala@gmail.com",
     icon: Mail
   }
 ];
+
+export const personalInfo = {
+  name: "Saiteja Reddy Namala",
+  title: "Aspiring Software Developer",
+  email: "saitejareddynamala@gmail.com",
+  phone: "+91-7989738432",
+  summary: "Aspiring Software Developer with strong foundations in Python, C++, backend engineering, and scalable system design. Experienced in REST API development, authentication systems, database-driven applications, and AI-driven automation. Passionate about solving real-world problems using clean engineering and efficient architecture."
+};
