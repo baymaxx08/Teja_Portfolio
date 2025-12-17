@@ -8,18 +8,5 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-      - key: DATABASE_URL
-        fromDatabase:
-          name: portfolio-db
-          property: connectionString
     autoDeploy: true
     healthCheckPath: /
-  
-  - type: pserv
-    name: portfolio-db
-    env: postgres
-    plan: free
-    ipAllowList: []
-    databaseName: teja_portfolio
-    databaseUser: portfolio_user
-    postgresMajorVersion: 15

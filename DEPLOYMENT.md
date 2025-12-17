@@ -21,7 +21,7 @@ The `render.yaml` file in this repository defines your entire infrastructure:
 
 ### What's Configured:
 - **Web Service**: Node.js backend (port automatically assigned)
-- **PostgreSQL Database**: For persistent data storage
+- **In-Memory Storage**: Fast, no database setup needed
 - **Auto-deployment**: Deploys automatically on git push to main
 
 ---
@@ -65,37 +65,12 @@ If Option A doesn't work:
 2. **Add Environment Variables**
    - Click "Environment" → "Add Environment Variable"
    - Set `NODE_ENV = production`
-   - Set `DATABASE_URL` (will be automatically set by PostgreSQL service)
-
-3. **Create PostgreSQL Database**
-   - Click "New" → "PostgreSQL"
-   - Name: `portfolio-db`
-   - Plan: Free tier
-   - After creation, copy the connection string
-
-4. **Link Database to Web Service**
-   - Go back to your web service
-   - In "Environment" section, find/update `DATABASE_URL`
-   - Paste your PostgreSQL connection string
 
 ---
 
-## Step 4: Post-Deployment Setup
+## Step 4: That's It!
 
-### Run Database Migrations
-
-After deployment, you need to run migrations to set up your database schema:
-
-1. **Via Render Shell**
-   - In your Web Service dashboard, click "Shell"
-   - Run: `npm run db:push`
-
-2. **Via SSH/Terminal (Advanced)**
-   - Connect to your service via the provided credentials
-
-### Initialize Database (If Needed)
-
-If tables don't exist, Drizzle will create them based on [shared/schema.ts](shared/schema.ts)
+No additional setup needed! Your application uses in-memory storage, so it's ready to go immediately after deployment.
 
 ---
 
@@ -114,7 +89,6 @@ Once deployment is complete:
 | Variable | Purpose | Auto-set? |
 |----------|---------|-----------|
 | `NODE_ENV` | Set to `production` for optimizations | ✓ Configure manually |
-| `DATABASE_URL` | PostgreSQL connection string | ✓ Auto-linked from DB service |
 | `PORT` | Port number (5000) | ✓ Auto-assigned by Render |
 
 ---
@@ -153,7 +127,7 @@ Once deployment is complete:
 **Production** (`npm start`):
 - Builds React frontend once
 - Serves frontend from Express
-- Uses PostgreSQL database
+- Uses in-memory storage
 - Single port (PORT env var)
 
 ---
@@ -172,7 +146,7 @@ With `render.yaml`, every push to `main` branch triggers:
 
 **Free Tier**:
 - Web Service: Free (auto-suspends after 15 min of inactivity)
-- PostgreSQL: Free (500MB storage, auto-suspend)
+- No database costs
 
 **Paid Tiers**: Available when you need continuous uptime
 
@@ -180,18 +154,12 @@ With `render.yaml`, every push to `main` branch triggers:
 
 ## Next Steps
 
-1. ✅ Push changes with `render.yaml` to GitHub
-   ```bash
-   git add render.yaml
-   git commit -m "Add Render deployment configuration"
-   git push origin main
-   ```
+1. ✅ Changes with `render.yaml` are pushed to GitHub
 
 2. Go to Render Dashboard → New Blueprint
 3. Select your repository and deploy
-4. Wait for build to complete
-5. Run database migrations in Shell tab
-6. Access your portfolio!
+4. Wait for build to complete (~5-10 min)
+5. Access your portfolio!
 
 ---
 

@@ -16,10 +16,8 @@
 2. Watch deployment progress (~5-10 min)
 3. Get your live URL when done ✅
 
-### Step 4: Initialize Database
-1. Open your Web Service → **"Shell"** tab
-2. Run: `npm run db:push`
-3. Done! 🎉
+### Step 4: Done! 🎉
+Your app is live and ready to use!
 
 ---
 
@@ -35,7 +33,7 @@ https://teja-portfolio.onrender.com
 ## ✅ Deployment Features
 
 ✓ **Auto-deploy**: Every git push to `main` redeploys  
-✓ **PostgreSQL Database**: Included for free  
+✓ **In-Memory Storage**: No database setup needed  
 ✓ **HTTPS**: Automatic SSL certificate  
 ✓ **Continuous Integration**: CI/CD pipeline built-in  
 ✓ **Logs**: Real-time logs in dashboard  
@@ -47,7 +45,7 @@ https://teja-portfolio.onrender.com
 - **`render.yaml`**: Infrastructure definition (DO NOT EDIT unless you know what you're doing)
 - **`DEPLOYMENT.md`**: Full deployment guide with troubleshooting
 - **`package.json`**: Build & start scripts for Render
-- **`shared/schema.ts`**: Database schema (migrations auto-run)
+- **`server/storage.ts`**: In-memory storage (no database needed)
 
 ---
 
@@ -57,7 +55,6 @@ https://teja-portfolio.onrender.com
 |-------|-----|
 | Build fails | Check logs; ensure `package.json` is valid |
 | App won't start | Set `NODE_ENV=production` env var |
-| Database error | Run `npm run db:push` in Shell tab |
 | 404 on visit | Wait for build to complete; refresh |
 | Auto-suspend (free tier) | Upgrade to Starter plan for always-on |
 
@@ -76,8 +73,8 @@ https://teja-portfolio.onrender.com
 
 - Free tier goes to sleep after 15 min inactivity
 - Upgrade to **Starter plan** ($10/mo) for always-on
-- Database auto-backs up daily
 - Scale up easily when needed
+- In-memory storage resets when app restarts
 
 ---
 
